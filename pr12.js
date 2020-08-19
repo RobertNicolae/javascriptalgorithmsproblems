@@ -17,28 +17,10 @@ for (i = 0; i < numbers.length; i++) {
     }
 }
 
-var mapped = numbers.map(function(el, i) {
-    return { index: i, value: el.imax };
-  })
 
-  mapped.sort(function(a, b) {
-    if (a.value > b.value) {
-      return 1;
-    }
-    if (a.value < b.value) {
-      return -1;
-    }
-    return 0;
-  });
-  
-  // container for the resulting order
-  var result = mapped.map(function(el){
-    return numbers[el.index];
-  });
-    
+for(let i = imax; i <= imin; i++) {
+    minMax.push(numbers[i]);
+}
 
-
-
-
-
-console.log(numbers);
+minMax.sort((a, b) => a - b);
+console.log(minMax);

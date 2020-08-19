@@ -12,11 +12,12 @@ for(let i = Math.floor(numbers.length / 2); i < numbers.length; i++) {
     secondHalf.push(numbers[i]);
 }
 
-
 firstHalf.sort((a,b) => a - b);
 secondHalf.sort((a,b) => b - a);
 
-newNumbers.push(firstHalf, secondHalf);
+
+
+newNumbers = [...firstHalf, ...secondHalf];
 console.log(newNumbers);
 
 
