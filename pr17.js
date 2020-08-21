@@ -1,4 +1,4 @@
-let candelsHeight = [4, 2, 4, 4];
+let candelsHeight = [4, 2, 4, 4, 5, 4];
 let tallestCandels = [];
 let max = Math.max(...candelsHeight);
 
