@@ -1,9 +1,17 @@
-let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
-let primeNumbers = [];
-let numarPrim = numbers[0];
+let n = 7;
 
-for(i = 0; i < numbers.length; i++) {
-    if(numbers[i] === 2 || numbers[i] % 2 !== 0) {
-        primeNumbers.push(numbers[i]);
-    } if (numarPrim)
+let primeNumbers = [];
+let countNrPrime = 0;
+
+primeNumbers[1] = false;
+for (let i = 2; i <= n; i++) {
+    if (primeNumbers[i] === undefined) {
+        primeNumbers[i] = true;
+        countNrPrime++;
+        for (let j = 2; i * j <= n; j++) {
+            primeNumbers[i * j] = false;
+        }
+    }
 }
+
+console.log(countNrPrime);
