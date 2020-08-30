@@ -16,7 +16,8 @@ let noWays = 0;
 
 for (let k = 0; k < bar.length - (m - 1); k++) {
     pieceBar.push(bar[k]);
-    for (let i = k + 1; i <= k + (m - 1); i++) {
+    for (let i = k + 1; i <= k + (m - 1);
+        {
         pieceBar.push(bar[i]);
     }
 
