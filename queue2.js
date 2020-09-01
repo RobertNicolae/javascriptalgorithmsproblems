@@ -1,6 +1,6 @@
-let peopleTemperature = [36, 37.2, 36.9, 39.1, 38.5, 38, 37.5];
+let peopleTemperature = [36, 37.2, 36.9, 39.1, 38.6, 38, 37.5];
 
-x = 38.5;
+const x = 38.5;
 let isolate = [];
 
 function pushToQueue(queue, numar) {
@@ -21,11 +21,13 @@ function isEmpty(queue) {
 
 
 while (isEmpty(peopleTemperature) === false) {
-    if(parseFloat(frontShow(peopleTemperature)) < parseFloat(x)) {
-        popFromQueue(peopleTemperature);
-    } else {
+    let currentPeopleTemperature = frontShow(peopleTemperature);
+
+    if (currentPeopleTemperature > x) {
         isolate.push(frontShow(peopleTemperature));
     }
+
+    popFromQueue(peopleTemperature);
 }
 
 console.log(isolate.length);
