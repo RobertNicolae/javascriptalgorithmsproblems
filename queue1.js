@@ -24,7 +24,11 @@ function isEmpty(queue) {
     return queue.length === 0;
 }
 
-//isEmpty(coada);
+if (isEmpty(coada)) {
+    console.log("DA");
+} else {
+    console.log("nu");
+}
 
 //console.log(coada);
 

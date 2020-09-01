@@ -1,13 +1,14 @@
 let peopleTemperature = [36, 37.2, 36.9, 39.1, 38.5, 38, 37.5];
-let isolatePeople = [];
+
 x = 38.5;
+let isolate = [];
 
 function pushToQueue(queue, numar) {
     queue.push(numar);
 }
 
 function popFromQueue(queue) {
-    queue.pop(queue);
+    queue.shift();
 }
 
 function frontShow(queue) {
@@ -18,10 +19,13 @@ function isEmpty(queue) {
     return queue.length === 0;
 }
 
-for(let i = 0; i < peopleTemperature.length; i++) {
-    if (peopleTemperature[i] > x) {
-        pushToQueue(isolatePeople);
+
+while (isEmpty(peopleTemperature) === false) {
+    if(parseFloat(frontShow(peopleTemperature)) < parseFloat(x)) {
+        popFromQueue(peopleTemperature);
+    } else {
+        isolate.push(frontShow(peopleTemperature));
     }
 }
 
-console.log(isolatePeople.length);
+console.log(isolate.length);
