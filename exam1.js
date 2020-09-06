@@ -52,20 +52,55 @@ let queue = new Queue();
 
 //Subpunctul a
 
+parcels.forEach(function (parcel) {
+    if(parcel.type === 0) {
+        queue.push(parcel.awb);
+    }
+})
+parcels.forEach(function (parcel) {
+    if(parcel.type !== 0) {
+        queue.push(parcel.awb);
+    }
+})
 
+while(queue.isEmpty() === false) {
+    queue.pop();
+}
+
+
+
+
+
+console.log(queue);
 
 //End subpunctul a
 
 
 //Subpunctul b
+let totalSum = 0;
+parcels.forEach(function( parcel) {
+    if(parcel.price < 3500 && parcel.type === 0) {
+        totalSum += parcel.price
+    }
+})
 
-
+console.log(totalSum);
 
 //End subpunctul b
 
 
 //Subpunctul c
 let k = 4;
+let livrateToday = [];
+parcels.forEach(function (parcel) {
+    if(parcel.type === 1) {
+        livrateToday.push(parcel.awb);
+    } else if(parcel.type === 0 && parcel.price < 3500) {
+        livrateToday.push(parcel.awb);
+    }
+})
+
+console.log(livrateToday);
 
 
 //End subpunctul c
